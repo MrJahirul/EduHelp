@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+    background-color: #272727!important;
+    height: 100vh;
+    overflow: hidden;
+  
+}
+.logo-text{
+    font-weight: bold;
+}
+#text-logo{
+    color: rgb(17, 241, 17);
+}
+.nav-color{
+    background-color:#1e1f1f;
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .profile-name {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .profile-bio {
+    margin-bottom: 20px;
+  }
+
+
+  /* chart css */
+
+/**
+ * 1. The `reverse` animation direction plays the animation backwards
+ *    which makes it start at the stroke offset 100 which means displaying
+ *    no stroke at all and animating it to the value defined in the SVG
+ *    via the inline `stroke-dashoffset` attribute.
+ * 2. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
+ */
+
+ .grid{
+  position: absolute;
+  bottom: -189px;
+  right: 64px;
+}
+ .circle-chart__circle {
+  animation: circle-chart-fill 2s reverse; /* 1 */ 
+  transform: rotate(-90deg); /* 2, 3 */
+  transform-origin: center; /* 4 */
+}
+
+/**
+ * 1. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 2. Scaling mirrors the circle to make the stroke move right
+ *    to mark a positive chart value.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
+ */
+.circle-chart__circle--negative {
+  transform: rotate(-90deg) scale(1,-1); /* 1, 2, 3 */
+}
+
+.circle-chart__info {
+  animation: circle-chart-appear 2s forwards;
+  opacity: 0;
+  transform: translateY(0.3em);
+}
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Layout styles only, not needed for functionality */
+/* html {
+  font-family: sans-serif;
+  
+} */
+
+/* .grid {
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(1, 1fr);
+  width: 223px;
+  margin-top: 10px;
+}
+
+@media (min-width: 31em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+.containerAll{
+  height:87vh;
+  position: relative;
+ 
+}
+
+.mainBody{
+  background-color: #272727;
+}
+ /* txt input css */
+.massage{
+  /* background-color: #f6f2f2; */
+  overflow: auto;
+  width: 100%!important;
+  /* height: ; */
+  height: 78vh;
+  position: relative;
+  background-image: url("../images/chatBackground.jpg");
+  background-repeat: no-repeat; /* or 'repeat-x', 'repeat-y', 'repeat' for different repeat styles */
+  background-size: cover; /* 'cover' or 'contain' to control the image size */
+  background-position: center center; /* 'x y' to control the image position */
+  /* margin-bottom: 1000px!important; */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+/* Cool scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  display: block
+}
+::-webkit-scrollbar-thumb {
+  background: #e4eaf5;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(196, 201, 211)
+}
+/* Center stuff and background */
+.typeInput{
+  background: #0a0a0a!important;
+  width: 100%!important;
+  /* height: 100%; */
+   display: flex;
+ 
+  justify-content: center;
+  align-items: center; 
+  /* flex-direction: column; */
+    /* Set styles for the div at the bottom */
+    background-color: #f0f0f0; /* Add styles as desired */
+    padding: 10px;
+      position: absolute; 
+  bottom:0;
+  right: 0;
+}
+
+h1 {
+  color: white;
+}
+
+/** This is the css of the input **/
+#w-input-container {
+  width: 100%;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 9px 18px 11px;
+  margin: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 21px;
+
+}
+
+.w-input-text-group {
+  position: relative;
+}
+
+.w-placeholder {
+  color: #a0a0a0;
+  top: 0;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  opacity: 0;
+  transition: 0.2s padding ease-in-out;
+}
+
+#w-input-text {
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  z-index: 1;
+  max-height: 100px;
+  min-height: 20px;
+  padding: 0 0 0 2px;
+  outline: 0;
+  transition: 0.2s padding ease-in-out;
+}
+
+#w-input-text:empty + .w-placeholder {
+  opacity: 1;
+}
+
+#w-input-text:focus + .w-placeholder {
+  padding: 0 6px 0px;
+}
+
+#w-input-text:focus {
+  padding: 0 6px 0px;
+}
+
+#send{
+  width: 100px;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 9px 30px 11px;
+  margin: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 21px;
+  background-color: rgb(38, 213, 38);
+  /* position: absolute; 
+  bottom:0; */
+}
+
+.messageBox{
+  background-color: red;
+  height: 100%;
+}
+
+.singleMessage{
+  width: auto;
+  height: auto;
+  background-color: #158627;
+  color: white;
+  padding: 10px;
+  /* border-radius: ; */
+}
+
+/* kjl */
+ .message-user-right{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 15px;
+}
+
+ .message-user-right .message-user-right-img{
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+  align-items: center;
+}
+ .message-user-right .message-user-right-img img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+ .message-user-right-text{
+  position: relative;
+  padding: 15px 25px;
+  background-color: rgb(16, 161, 0);
+  border-radius: 15px;
+  color: #302f2f;
+  width: 250px;
+}
+
+ .message-user-right-text::before{
+  content: '';
+  position: absolute;
+  top: -26px;
+  right: 15px;
+  border-right: 0px solid transparent;
+  border-top: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid rgb(16, 161, 0);;
+}
+
+/* left massage */
+
+ .message-user-left{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+ .message-user-left .message-user-left-img{
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+}
+
+.message-user-left .message-user-left-img img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+ .message-user-left .message-user-left-text{
+  position: relative;
+  padding: 15px 25px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  color: #949494;
+  max-width: 250px;
+}
+
+ .message-user-left .message-user-left-text::before{
+  content: '';
+  position: absolute;
+  top: -26px;
+  left: 15px;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-left: 0px solid transparent;
+  border-bottom: 15px solid #ffffff;
+}
+
+/* side nav */
+.sideNav{
+  background-color: #11111188;
+  height: 100vh;
+  overflow: auto;
+}
+.card{
+  background-color: #111111!important;
+  color: white!important;
+  border-radius: 0%!important;
+}
+/* // delete icon */
+
+.delete{
+
+}
+
+.delete:hover{
+  color: red; /* Change the color to red on hover */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+.chatProfileImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

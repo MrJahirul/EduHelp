@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    margin-bottom: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    
+}
+th:hover {
+
+    color: rgb(253, 219, 126);
+    
+}
+button:hover{
+    background-color: rgba(225, 240, 14, 0.726);
+}
+.status-pending {
+    color: orange;
+}
+.status-approved {
+    color: green;
+}
+.status-rejected {
+    color: red;
+}
